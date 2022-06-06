@@ -25,7 +25,10 @@ class PersonalInformation(Schema):
         self_view_many = 'personalInfo_all'
 
         name = fields.Str(required=True)
-        # See what else is needed
+        address = fields.Str(required=True)
+        phone_number = fields.Integer()
+        github_page = fields.String(required=True)
+
 
 
 # I dont think a relationship table is needed
