@@ -16,3 +16,13 @@ if __name__ == '__main__':
     # this allows it to run in debug mode
     app.run(debug=True)
 
+
+class PersonalInformation(Schema):
+    class Meta:
+        type_ = 'personalInformation'
+        self_view = 'personalInfo_one'
+        self_view_kwargs = ('id' '<id>')
+        self_view_many = 'personalInfo_all'
+
+        name = fields.Str(required=True)
+        # See what else is needed
