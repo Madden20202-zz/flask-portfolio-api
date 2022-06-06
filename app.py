@@ -10,5 +10,6 @@ def welcome():
     return "Hello World"
 
 if __name__ == '__main__':
+    # this allows it to run in debug mode
     app.run(debug=True)
 
