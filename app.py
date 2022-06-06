@@ -26,3 +26,11 @@ class PersonalInformation(Schema):
 
         name = fields.Str(required=True)
         # See what else is needed
+
+
+# I dont think a relationship table is needed
+# since the point of it is to show correlation
+# between multiple points of data
+# Since all I need to do is do a 
+# .get() it should not be complicated
+# especially since all of the data is isolated
