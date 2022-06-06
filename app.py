@@ -1,6 +1,10 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
+# Imports for Abstraction Layer
+from marshmallow_jsonapi.flask import Schema 
+from marshmallow_jsonapi import fields
+
 # Entrypoint of app
 app = Flask(__name__)
 
