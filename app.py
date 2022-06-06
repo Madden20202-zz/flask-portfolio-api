@@ -40,6 +40,16 @@ class WorkHistory(Schema):
         work_duration = fields.Str(required=True)
         work_role = fields.Str(required=True)
 
+class Traits(Schema):
+    class Meta: 
+        type_ = 'traits'
+        self_view = 'traits_one'
+        self_view_kwargs = ('id' '<id>')
+        self_view_many = 'traits_all'
+
+        characteristics = fields.Str(required=True)
+        positive_habits = fields.Str(required=True)
+        hobbies = fields.Str(required=True)
 # I dont think a relationship table is needed
 # since the point of it is to show correlation
 # between multiple points of data
