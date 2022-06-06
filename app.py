@@ -29,7 +29,16 @@ class PersonalInformation(Schema):
         phone_number = fields.Integer()
         github_page = fields.String(required=True)
 
+class WorkHistory(Schema):
+    class Meta:
+        type_ = 'workHistory'
+        self_view = 'workHistory_one'
+        self_view_kwargs = ('id' '<id>')
+        self_view_many = 'workHistory_all'
 
+        business_name = fields.Str(required=True)
+        work_duration = fields.Str(required=True)
+        work_role = fields.Str(required=True)
 
 # I dont think a relationship table is needed
 # since the point of it is to show correlation
