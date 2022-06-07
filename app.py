@@ -1,5 +1,5 @@
+import os
 from flask import Flask
-from flask import jsonify
 from flask_sqlalchemy import SQLAlchemy
 
 # Imports for Abstraction Layer
@@ -15,7 +15,7 @@ db = SQLAlchemy(app)
 
 if __name__ == '__main__':
     # this allows it to run in debug mode
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=500)
 
 
 class PersonalInformation(Schema):
