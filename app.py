@@ -1,4 +1,5 @@
 from flask import Flask
+# maybe jsonify would be easier
 from flask_sqlalchemy import SQLAlchemy
 
 # Imports for Abstraction Layer
