@@ -53,6 +53,17 @@ class Traits(Schema):
         hobbies = fields.Str(required=True)
 
 # Now find a way to have it sent out
+# Research has shown that the SQL Alchemy 
+# does not actually store it as a json object
+
+# this creates multiple issues, first the data is stored
+# but now the data cant be used outside of the 
+# api. Second is that it can not get the import for it,
+# hence it would have to be downloaded then debugged
+
+# A potential solution is just use jsonify to store
+# it as a json object and the api's only job 
+# would be to pass it down the line
 
 
 # I dont think a relationship table is needed
