@@ -14,7 +14,7 @@ db = SQLAlchemy(app)
 
 if __name__ == '__main__':
     # this allows it to run in debug mode
-    app.run(debug=True)
+    app.run(debug=True, port=5000)
 
 
 class PersonalInformation(Schema):
@@ -50,6 +50,10 @@ class Traits(Schema):
         characteristics = fields.Str(required=True)
         positive_habits = fields.Str(required=True)
         hobbies = fields.Str(required=True)
+
+# Now find a way to have it sent out
+
+
 # I dont think a relationship table is needed
 # since the point of it is to show correlation
 # between multiple points of data
