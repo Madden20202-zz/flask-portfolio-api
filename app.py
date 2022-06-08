@@ -23,17 +23,12 @@ if __name__ == '__main__':
     app.run(debug=True, port=500)
 
 
-class PersonalInformation(Schema):
-    class Meta:
-        type_ = 'personalInformation'
-        self_view = 'personalInfo_one'
-        self_view_kwargs = ('id' '<id>')
-        self_view_many = 'personalInfo_all'
-
-        name = fields.Str(required=True)
-        address = fields.Str(required=True)
-        phone_number = fields.Integer()
-        github_page = fields.String(required=True)
+class PersonalInformationModel(db.model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String, required=True)
+    address = db.Column(db.String, required=True)
+    phone_number = db.Column(db.Integer)
+    github_page = fields.String(required=True)
 
 class WorkHistory(Schema):
     class Meta:
