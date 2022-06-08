@@ -36,16 +36,16 @@ class PersonalInformationModel(db.model):
         self.phone_number = phone_number
         self.github_page = github_page
 
-class WorkHistory(Schema):
-    class Meta:
-        type_ = 'workHistory'
-        self_view = 'workHistory_one'
-        self_view_kwargs = ('id' '<id>')
-        self_view_many = 'workHistory_all'
+class WorkHistoryModel(db.model):
+    id = db.Column(dbInteger, primary_key=True)
+    business_name = db.Column(db.String, required=True)
+    work_duration = db.Column(db.String, required=True)
+    work_role = db.Column(db.String, required=True)
 
-        business_name = fields.Str(required=True)
-        work_duration = fields.Str(required=True)
-        work_role = fields.Str(required=True)
+    def __init__(self, id, business_name, work_duration, work_role):
+        self.business_name = business_name
+        self.work_duration = work_duration
+        self.work_role = work_role
 
 class Traits(Schema):
     class Meta: 
