@@ -26,10 +26,10 @@ if __name__ == '__main__':
 # and then filled in so it can be used
 class PersonalInformationModel(db.model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String, required=True)
-    address = db.Column(db.String, required=True)
-    phone_number = db.Column(db.Integer)
-    github_page = db.column(db.String, required=True)
+    name = db.Column(db.String("Austin Martz"))
+    address = db.Column(db.String("407 W. 6th Street Okmulgee OK 74447"))
+    phone_number = db.Column(db.Integer(539-286-3763))
+    github_page = db.column(db.String("URL_LINK"))
 
     def __init__(self, name, address, phone_number, github_page):
         self.name = name
