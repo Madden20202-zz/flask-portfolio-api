@@ -22,7 +22,8 @@ if __name__ == '__main__':
     # this allows it to run in debug mode
     app.run(debug=True, port=500)
 
-
+# All the information will now be modeled, 
+# and then filled in so it can be used
 class PersonalInformationModel(db.model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, required=True)
@@ -37,7 +38,7 @@ class PersonalInformationModel(db.model):
         self.github_page = github_page
 
 class WorkHistoryModel(db.model):
-    id = db.Column(dbInteger, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     business_name = db.Column(db.String, required=True)
     work_duration = db.Column(db.String, required=True)
     work_role = db.Column(db.String, required=True)
@@ -47,13 +48,13 @@ class WorkHistoryModel(db.model):
         self.work_duration = work_duration
         self.work_role = work_role
 
-class Traits(Schema):
-    class Meta: 
-        type_ = 'traits'
-        self_view = 'traits_one'
-        self_view_kwargs = ('id' '<id>')
-        self_view_many = 'traits_all'
+class TraitsModel(db.model):
+    id = db.Column(db.Integer, primary_key=True)
+    characteristics = db.Column(db.String, required=True)
+    positive_habits = db.Column(db.String, required=True)
+    hobbies = db.Column(db.String, required=True)
 
-        characteristics = fields.Str(required=True)
-        positive_habits = fields.Str(required=True)
-        hobbies = fields.Str(required=True)
+    def __init__(self, characteristics, positive_habits, hobbies):
+        self.characteristics = characteristics
+        self.positive_habits = positive_habits
+        self.hobbies = hobbies
