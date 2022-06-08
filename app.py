@@ -47,13 +47,7 @@ class WorkHistoryModel(db.model):
         self.work_duration = work_duration
         self.work_role = work_role
 
-class Traits(Schema):
-    class Meta: 
-        type_ = 'traits'
-        self_view = 'traits_one'
-        self_view_kwargs = ('id' '<id>')
-        self_view_many = 'traits_all'
-
-        characteristics = fields.Str(required=True)
-        positive_habits = fields.Str(required=True)
-        hobbies = fields.Str(required=True)
+class TraitsModel(db.model):
+    characteristics = db.Column(db.String, required=True)
+    positive_habits = db.Column(db.String, required=True)
+    hobbies = db.Column(db.String, required=True)
