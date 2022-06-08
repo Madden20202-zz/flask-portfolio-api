@@ -22,7 +22,8 @@ if __name__ == '__main__':
     # this allows it to run in debug mode
     app.run(debug=True, port=500)
 
-
+# All the information will now be modeled, 
+# and then filled in so it can be used
 class PersonalInformationModel(db.model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, required=True)
