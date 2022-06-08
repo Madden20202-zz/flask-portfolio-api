@@ -13,7 +13,7 @@ def helloWorld():
     return 'Hello World!'
 
 # Setup the SQL Alchemy
-
+ma = Marshmallow(app)
 db = SQLAlchemy(app)
 
 if __name__ == '__main__':
