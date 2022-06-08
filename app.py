@@ -30,6 +30,12 @@ class PersonalInformationModel(db.model):
     phone_number = db.Column(db.Integer)
     github_page = fields.String(required=True)
 
+    def __init__(self, name, address, phone_number, github_page):
+        self.name = name
+        self.address = address
+        self.phone_number = phone_number
+        self.github_page = github_page
+
 class WorkHistory(Schema):
     class Meta:
         type_ = 'workHistory'
