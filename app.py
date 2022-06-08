@@ -2,18 +2,18 @@ import os
 from flask import Flask
 from flask import jsonify
 from flask_sqlalchemy import SQLAlchemy
-
-# Imports for Abstraction Layer
-from marshmallow_jsonapi.flask import Schema 
-from marshmallow_jsonapi import fields
+from flask_marshmallow import Marshmallow
 
 # Entrypoint of app
 app = Flask(__name__)
+
 # Route of app
-@app.route('/PersonalInfo/', methods=["GET"])
+@app.route('/')
+def helloWorld():
+    return 'Hello World!'
 
 # Setup the SQL Alchemy
-app.config['SQLALCHEMY_DATABASE_URL'] = 'sqlite:////portfolio.db'
+
 db = SQLAlchemy(app)
 
 if __name__ == '__main__':
