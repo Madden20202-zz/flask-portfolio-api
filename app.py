@@ -58,3 +58,10 @@ class TraitsModel(db.model):
         self.characteristics = characteristics
         self.positive_habits = positive_habits
         self.hobbies = hobbies
+
+
+# Schema Work 
+class PersonalInformationSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = PersonalInformationModel(name, address, phone_number, github_page)
+
