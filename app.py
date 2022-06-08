@@ -68,3 +68,7 @@ class PersonalInformationSchema(ma.SQLAlchemyAutoSchema):
 class WorkHistorySchema(ma.SQLAlchemyAutoSchema):
     class Meta:
         model = WorkHistoryModel(id, business_name, work_duration, work_role)
+
+class TraitsSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = TraitsModel(characteristics, positive_habits, hobbies)
