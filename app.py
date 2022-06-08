@@ -1,5 +1,6 @@
 import os
 from flask import Flask
+from flask import jsonify
 from flask_sqlalchemy import SQLAlchemy
 
 # Imports for Abstraction Layer
@@ -8,6 +9,8 @@ from marshmallow_jsonapi import fields
 
 # Entrypoint of app
 app = Flask(__name__)
+# Route of app
+@app.route('/PersonalInfo/', methods=["GET"])
 
 # Setup the SQL Alchemy
 app.config['SQLALCHEMY_DATABASE_URL'] = 'sqlite:////portfolio.db'
