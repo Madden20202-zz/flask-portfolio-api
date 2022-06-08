@@ -28,7 +28,7 @@ class PersonalInformationModel(db.model):
     name = db.Column(db.String, required=True)
     address = db.Column(db.String, required=True)
     phone_number = db.Column(db.Integer)
-    github_page = fields.String(required=True)
+    github_page = db.column(db.String, required=True)
 
     def __init__(self, name, address, phone_number, github_page):
         self.name = name
